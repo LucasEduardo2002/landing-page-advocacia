@@ -18,6 +18,12 @@
   padding: 0;
 }
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Source Sans 3", "Trebuchet MS", sans-serif;
   background: radial-gradient(circle at top, #fff7ee 0%, #f0e8de 45%, #efe9e2 100%);
@@ -443,6 +449,7 @@ img {
   align-items: center;
   gap: 20px;
   box-shadow: var(--shadow);
+  width: 100%;
 }
 
 .cta h2 {
@@ -595,6 +602,10 @@ img {
   .map-frame {
     min-height: 260px;
   }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 520px) {
@@ -620,6 +631,10 @@ img {
 
   .footer {
     padding: 48px 18px 32px;
+  }
+
+  .cta {
+    margin-bottom: 64px;
   }
 }
 
