@@ -61,6 +61,8 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  position: relative;
+  z-index: 3;
 }
 
 .logo {
@@ -486,6 +488,19 @@ img {
 }
 
 @media (max-width: 900px) {
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .site-header.menu-open::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 18, 22, 0.55);
+    backdrop-filter: blur(2px);
+    z-index: 2;
+  }
+
   .nav {
     flex-wrap: wrap;
     margin-bottom: 40px;
@@ -502,11 +517,25 @@ img {
     background: rgba(31, 36, 43, 0.98);
     padding: 16px;
     border-radius: var(--radius-sm);
-    display: none;
+    display: flex;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-8px);
+    overflow: hidden;
+    pointer-events: none;
+    transition: max-height 0.3s ease, opacity 0.2s ease, transform 0.2s ease;
   }
 
   .nav-links.open {
-    display: flex;
+    max-height: 420px;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav-links a,
+  .nav-links .btn {
+    width: 100%;
   }
 
   .btn-outline {
@@ -591,6 +620,24 @@ img {
 
   .footer {
     padding: 48px 18px 32px;
+  }
+}
+
+@media (max-width: 360px) {
+  .logo {
+    font-size: 16px;
+  }
+
+  .logo small {
+    letter-spacing: 4px;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-trust strong {
+    font-size: 22px;
   }
 }
 
