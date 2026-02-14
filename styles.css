@@ -604,6 +604,10 @@ img {
     font-size: 18px;
   }
 
+  .about-photo img {
+    min-height: 280px;
+  }
+
   .hero-actions,
   .hero-contact,
   .cta-actions {
@@ -641,6 +645,10 @@ img {
 @media (max-width: 520px) {
   .site-header {
     padding: 20px 18px 56px;
+  }
+
+  .about-photo img {
+    min-height: 240px;
   }
 
   .hero {
