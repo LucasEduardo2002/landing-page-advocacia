@@ -164,61 +164,88 @@ img {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 }
 
-.hero-trust {
+.hero-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
 }
 
-.hero-trust strong {
-  font-size: 26px;
+.stat-item {
+  text-align: left;
+}
+
+.stat-item strong {
+  font-size: 32px;
+  display: block;
+  color: var(--accent);
+  font-family: "Playfair Display", "Times New Roman", serif;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-item span {
+  font-size: 13px;
+  color: #d8d2c6;
   display: block;
 }
 
-.hero-card .card {
-  background: rgba(255, 255, 255, 0.97);
-  color: #1d2430;
-  padding: 28px;
+/* Hero Image Section */
+.hero-image {
+  position: relative;
+}
+
+.hero-photo {
+  position: relative;
   border-radius: var(--radius);
+  overflow: hidden;
   box-shadow: var(--shadow);
-  backdrop-filter: blur(8px);
+  background: linear-gradient(135deg, #0f2340 0%, #0b1a2e 100%);
 }
 
-.hero-card h3 {
-  font-size: 22px;
-  margin-bottom: 10px;
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  max-height: 520px;
+  object-fit: cover;
+  display: block;
 }
 
-.hero-card p {
-  color: #565c64;
-}
-
-.hero-card .eyebrow {
-  color: var(--accent-dark);
-  margin-bottom: 10px;
-}
-
-.hero-contact {
+.hero-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  padding: 18px 20px;
+  border-radius: var(--radius-sm);
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 18px 0 20px;
-}
-
-.hero-meta {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  align-items: center;
   gap: 14px;
-  color: #6b6f76;
-  font-size: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
-.hero-meta strong {
+.badge-icon {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.hero-badge strong {
   display: block;
   color: #0e1f36;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.hero-badge span {
+  display: block;
+  color: #565c64;
+  font-size: 13px;
 }
 
 .btn {
@@ -302,7 +329,7 @@ img {
   margin-bottom: 12px;
 }
 
-.location-grid {
+.location-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 28px;
@@ -369,6 +396,126 @@ img {
   margin-bottom: 8px;
 }
 
+/* Areas de Atuacao - Layout Moderno */
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+.area-card {
+  background: var(--surface);
+  padding: 32px 28px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 40px rgba(20, 22, 26, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.area-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-dark) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.area-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px rgba(20, 22, 26, 0.12);
+}
+
+.area-card:hover::before {
+  opacity: 1;
+}
+
+.area-icon {
+  font-size: 42px;
+  margin-bottom: 18px;
+  line-height: 1;
+}
+
+.area-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #0e1f36;
+  font-weight: 600;
+}
+
+.area-card > p {
+  color: #3d4550;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+.area-features {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.area-features li {
+  color: #565c64;
+  font-size: 14px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.area-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Localizacao com Imagem Centralizada */
+.location-image {
+  margin: 0 auto 32px;
+  max-width: var(--content);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.location-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  max-height: 450px;
+  object-fit: contain;
+  display: block;
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+
+.map-frame {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  min-height: 320px;
+  box-shadow: 0 18px 40px rgba(20, 22, 26, 0.08);
+}
+
+.map-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .split {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -433,6 +580,83 @@ img {
   display: block;
   color: #b5b1a9;
   font-size: 13px;
+}
+
+/* Visao e Valores */
+.vision-values {
+  padding: 60px 24px;
+}
+
+.vision-values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  max-width: var(--content);
+  margin: 0 auto;
+}
+
+.vision-card {
+  background: var(--surface);
+  padding: 32px 28px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 40px rgba(20, 22, 26, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vision-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px rgba(20, 22, 26, 0.14);
+}
+
+.vv-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.vv-icon {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.vision-card h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #0e1f36;
+  margin: 0;
+}
+
+.vision-card p {
+  color: #3d4550;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.values-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.values-list li {
+  color: #3d4550;
+  font-size: 15px;
+  padding-left: 24px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.values-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .steps {
@@ -604,8 +828,57 @@ img {
     font-size: 18px;
   }
 
+  .hero-photo img {
+    min-height: 340px;
+    max-height: 440px;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .stat-item strong {
+    font-size: 24px;
+  }
+
+  .stat-item span {
+    font-size: 12px;
+  }
+
   .about-photo img {
     min-height: 280px;
+  }
+
+  .areas-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .vision-values {
+    padding: 48px 20px;
+  }
+
+  .vision-values-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .location-image {
+    margin-bottom: 24px;
+  }
+
+  .location-image img {
+    min-height: 220px;
+    max-height: 300px;
+  }
+
+  .map-frame {
+    min-height: 260px;
+  }
+
+  .location-grid {
+    gap: 20px;
   }
 
   .hero-actions,
@@ -625,18 +898,6 @@ img {
     max-width: 100%;
   }
 
-  .hero-trust {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .location-grid {
-    gap: 20px;
-  }
-
-  .map-frame {
-    min-height: 260px;
-  }
-
   .footer-links {
     grid-template-columns: 1fr;
   }
@@ -647,16 +908,82 @@ img {
     padding: 20px 18px 56px;
   }
 
+  .hero-photo img {
+    min-height: 300px;
+    max-height: 380px;
+  }
+
+  .hero-badge {
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    padding: 14px 16px;
+  }
+
+  .badge-icon {
+    font-size: 28px;
+  }
+
+  .hero-badge strong {
+    font-size: 14px;
+  }
+
+  .hero-badge span {
+    font-size: 12px;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .stat-item strong {
+    font-size: 28px;
+  }
+
   .about-photo img {
     min-height: 240px;
   }
 
-  .hero {
-    gap: 24px;
+  .vision-values {
+    padding: 40px 18px;
   }
 
-  .hero-trust {
-    grid-template-columns: 1fr;
+  .vision-card {
+    padding: 24px 20px;
+  }
+
+  .vv-icon {
+    font-size: 28px;
+  }
+
+  .vision-card h3 {
+    font-size: 20px;
+  }
+
+  .location-image {
+    margin-bottom: 20px;
+  }
+
+  .location-image img {
+    min-height: 200px;
+    max-height: 260px;
+  }
+
+  .map-frame {
+    min-height: 280px;
+  }
+
+  .area-card {
+    padding: 24px 20px;
+  }
+
+  .area-icon {
+    font-size: 36px;
+  }
+
+  .hero {
+    gap: 24px;
   }
 
   .section {
@@ -688,17 +1015,9 @@ img {
   .hero-content h1 {
     font-size: 28px;
   }
-
-  .hero-trust strong {
-    font-size: 22px;
-  }
 }
 
 @media (max-width: 640px) {
-  .hero-card .card {
-    padding: 22px;
-  }
-
   .cta {
     padding: 32px 20px;
   }
