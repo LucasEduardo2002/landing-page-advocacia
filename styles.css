@@ -412,6 +412,9 @@ img {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 
 .area-card::before {
@@ -436,9 +439,22 @@ img {
 }
 
 .area-icon {
-  font-size: 42px;
+  width: 62px;
+  height: 62px;
   margin-bottom: 18px;
-  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: #f7f2ea;
+  border: 1px solid #eadfce;
+}
+
+.area-icon img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  display: block;
 }
 
 .area-card h3 {
@@ -460,11 +476,13 @@ img {
   gap: 10px;
   margin: 0;
   padding: 0;
+  margin-top: 8px;
 }
 
 .area-features li {
   color: #565c64;
   font-size: 14px;
+  line-height: 1.55;
   padding-left: 20px;
   position: relative;
 }
@@ -979,7 +997,13 @@ img {
   }
 
   .area-icon {
-    font-size: 36px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .area-icon img {
+    width: 30px;
+    height: 30px;
   }
 
   .hero {
@@ -1057,3 +1081,70 @@ img {
 .hero-content > *:nth-child(5) {
   animation-delay: 0.25s;
 }
+
+/* Áreas de atuação - alinhamento geral */
+#atuacao .section-header {
+  max-width: 700px;
+  margin-bottom: 44px;
+  text-align: left;
+}
+
+#atuacao .section-header p {
+  color: #4d5561;
+}
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+
+.area-card {
+  /* mantém */
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.area-card > p {
+  margin-bottom: 18px;
+  /* remova se existir */
+  flex-grow: 0;
+}
+
+.area-features {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  /* troque esta linha */
+  margin-top: 8px; /* antes estava auto */
+}
+
+/* ...existing code... */
+
+@media (max-width: 1024px) {
+  .areas-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .areas-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  #atuacao .section-header {
+    text-align: left;
+    margin-bottom: 32px;
+  }
+
+  .area-card {
+    padding: 24px 20px;
+  }
+}
+
+/* ...existing code... */
