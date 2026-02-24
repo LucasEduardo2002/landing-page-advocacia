@@ -851,6 +851,14 @@ img {
 }
 
 @media (max-width: 768px) {
+  #sobre.split {
+    grid-template-columns: 1fr;
+  }
+
+  #sobre .about-photo {
+    order: -1;
+  }
+
   .logo {
     font-size: 18px;
   }
