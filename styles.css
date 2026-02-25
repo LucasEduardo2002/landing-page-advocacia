@@ -507,7 +507,7 @@ img {
 /* Localizacao com Imagem Centralizada */
 .location-image {
   margin: 0 auto 32px;
-  max-width: var(--content);
+  max-width: 1040px;
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
@@ -515,10 +515,10 @@ img {
 
 .location-image img {
   width: 100%;
-  height: 100%;
-  min-height: 300px;
-  max-height: 450px;
+  height: auto;
+  max-height: 520px;
   object-fit: contain;
+  object-position: center;
   display: block;
 }
 
@@ -905,11 +905,14 @@ img {
 
   .location-image {
     margin-bottom: 24px;
+    aspect-ratio: 14 / 8;
   }
 
   .location-image img {
-    min-height: 220px;
-    max-height: 300px;
+    height: 100%;
+    max-height: none;
+    object-fit: cover;
+    object-position: 40% center;
   }
 
   .map-frame {
@@ -1002,11 +1005,14 @@ img {
 
   .location-image {
     margin-bottom: 20px;
+    aspect-ratio: 4 / 3;
   }
 
   .location-image img {
-    min-height: 200px;
-    max-height: 260px;
+    height: 100%;
+    max-height: none;
+    object-fit: cover;
+    object-position: 36% center;
   }
 
   .map-frame {
