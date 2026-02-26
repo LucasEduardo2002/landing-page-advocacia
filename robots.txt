@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.adregustavoadvocacia.com.br/sitemap.xml
+Sitemap: https://www.andregustavoadvocacia.com.br/sitemap.xml
