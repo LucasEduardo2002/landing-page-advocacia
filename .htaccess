@@ -1,0 +1,5 @@
+RewriteEngine On
+
+# Redireciona domínio sem www para www (permanente)
+RewriteCond %{HTTP_HOST} ^andregustavoadvocacia\.com\.br$ [NC]
+RewriteRule ^(.*)$ https://www.andregustavoadvocacia.com.br/$1 [R=301,L,NE]
