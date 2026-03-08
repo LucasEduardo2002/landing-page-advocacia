@@ -1,6 +1,6 @@
 RewriteEngine On
 
-# Canonical único: sempre HTTPS + sem WWW
+# Canonical único: sempre HTTPS + WWW
 RewriteCond %{HTTPS} !=on [OR]
-RewriteCond %{HTTP_HOST} !^andregustavo\.com\.br$ [NC]
-RewriteRule ^ https://andregustavo.com.br%{REQUEST_URI} [R=301,L,NE]
+RewriteCond %{HTTP_HOST} !^www\.andregustavoadvocacia\.com\.br$ [NC]
+RewriteRule ^ https://www.andregustavoadvocacia.com.br%{REQUEST_URI} [R=301,L,NE]
